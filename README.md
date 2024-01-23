@@ -1,3 +1,7 @@
+# Introduction
+
+This is my personal attempt to make the now near-dead Voicy bot work on todays tech, fixing issues here and there and making everything work nicely on Docker. 
+
 [![Voicybot](/img/logo.png?raw=true)](https://voicybot.com/)
 
 # [@voicybot](https://t.me/voicybot) main repository
@@ -13,14 +17,12 @@ You can also help by translating the bot to other languages or fixing some texts
 - [voicy-landing](https://github.com/backmeupplz/voicy-landing) — [borodutch.com](https://borodutch.com) landing page
 - [voicy-recognition](https://github.com/backmeupplz/voicy-recognition/) — Recognition service for [voicybot.com](https://voicybot.com)
 
-## Installation and local launch
+## Installation and Docker deployment
 
-1. Clone this repo: `git clone https://github.com/backmeupplz/voicy`
-2. Launch a [mongo database](https://www.mongodb.com/) locally
-3. Create `.env` file with the environment variables listed below
-4. Install `ffmpeg` on your machine
-5. Run `yarn` in the root folder
-6. Run `yarn start`
+1. Clone this repo: `git clone https://github.com/bytebone/voicy`
+2. Edit the `.env.sample` file with your wit.ai tokens, telegram token and salt, and save it as `.env`
+3. Run `docker build --network=host -t bytebone:voicy`
+4. Run `docker compose up`
 
 ## Environment variables in `.env` file
 
@@ -35,18 +37,6 @@ You can also help by translating the bot to other languages or fixing some texts
 
 See examples in `.env.sample` file.
 
-## Continuous integration
-
-Any commit pushed to `main` gets deployed to [@voicybot](https://t.me/voicybot) via [CI Ninja](https://github.com/backmeupplz/ci-ninja).
-
 ## License
 
 MIT — use for any purpose. Would be great if you could leave a note about the original developers. Thanks!
-
-## As seen on
-
-[![Habrahabr](/img/habr.png?raw=true)](https://habrahabr.ru/post/316824/)
-[![Spark](/img/spark.png?raw=true)](https://spark.ru/startup/voicy/blog/19008/kak-zapustit-proekt-v-odinochku/)
-[![Reddit](/img/reddit.png?raw=true)](https://redd.it/5iduzy)
-[![Bot Store](/img/bs.png?raw=true)](https://storebot.me/bot/voicybot)
-[![Product Hunt](/img/ph.png?raw=true)](https://www.producthunt.com/posts/voicy)
