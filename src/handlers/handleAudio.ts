@@ -11,15 +11,15 @@ import urlToText from '@/helpers/urlToText'
 
 export default async function handleAudio(ctx: Context) {
   try {
-    if (!ctx.dbchat.paid) {
-      console.log('Sending the donate message')
-      await ctx.reply(ctx.i18n.t('sunsetting'), {
-        parse_mode: 'Markdown',
-        reply_to_message_id: ctx.msg.message_id,
-        disable_web_page_preview: true,
-      })
-      return
-    }
+    // if (!ctx.dbchat.paid) {
+    //   console.log('Sending the donate message')
+    //   await ctx.reply(ctx.i18n.t('sunsetting'), {
+    //     parse_mode: 'Markdown',
+    //     reply_to_message_id: ctx.msg.message_id,
+    //     disable_web_page_preview: true,
+    //   })
+    //   return
+    // }
     if (!ctx.dbchat.paid) {
       await ChatModel.updateOne(
         { id: ctx.dbchat.id },
