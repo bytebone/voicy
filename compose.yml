@@ -1,1 +1,28 @@
-../compose.yml
+version: '3'
+
+services:
+  voicy:
+#    build: .
+    image: astro:voicy    
+    container_name: verbilo-app
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - internal
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    container_name: verbilo-db
+    networks:
+      - internal
+    volumes:
+      - data:/data/db
+
+networks:
+  internal:
+
+volumes:
+  data:
+
